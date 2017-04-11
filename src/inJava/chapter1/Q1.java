@@ -24,4 +24,16 @@ public class Q1 {
 		}
 		return true;
 	}
+	
+	//optimal int table
+	//This table will handle 256 char
+	public boolean isUniqueOptimal(String s){
+		int[] table = new int[8];
+		for(char c : s.toCharArray()){
+			int m = c/32, n = c%32;
+			if((table[m] & (1 << n)) != 0) return false;
+			else table[m] = table[m] | (1 << n); 
+		}
+		return true;
+	}
 }
