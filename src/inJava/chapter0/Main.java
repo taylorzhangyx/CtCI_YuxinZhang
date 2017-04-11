@@ -1,4 +1,4 @@
-package java.chapter0;
+package inJava.chapter0;
 
 public class Main {
 

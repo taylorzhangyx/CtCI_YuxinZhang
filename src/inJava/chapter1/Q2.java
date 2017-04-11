@@ -1,4 +1,4 @@
-package java.chapter1;
+package inJava.chapter1;
 
 public class Q2 {
 	public boolean checkPermutation(String s1, String s2){
