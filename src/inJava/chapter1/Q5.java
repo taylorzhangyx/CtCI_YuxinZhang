@@ -19,7 +19,7 @@ public class Q5 {
 		if (pointer == s1.length())
 			return s2.length() - s1.length() == 1;
 		else
-			return s1.length() == s2.length() || s1.substring(pointer).equals(s2.substring(pointer + 1))
+			return s1.substring(pointer+1).equals(s2.substring(pointer+1))|| s1.substring(pointer).equals(s2.substring(pointer + 1))
 					|| s1.substring(pointer + 1).equals(s2.substring(pointer + 1));
 	}
 	@Test
@@ -36,4 +36,7 @@ public class Q5 {
 
 	@Test
 	public void test5(){ assertTrue(oneAway("va","a"));}
+	
+	@Test
+	public void test6(){ assertTrue(!oneAway("vabbb","avbbb"));}
 }
