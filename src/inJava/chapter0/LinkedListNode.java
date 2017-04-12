@@ -24,7 +24,6 @@ public class LinkedListNode {
 		}
 		n.next = end;
 	}
-	
 	public boolean isEquals(LinkedListNode node){
 		LinkedListNode cur = this;
 		while(node != null && cur != null){
@@ -36,7 +35,6 @@ public class LinkedListNode {
 		}
 		return node == null && cur == null;
 	}
-	
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		LinkedListNode n = this;
