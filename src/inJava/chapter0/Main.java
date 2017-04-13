@@ -1,11 +1,34 @@
 package inJava.chapter0;
 
-public class Main {
+import java.io.IOException;
 
-	public static void main(String[] args) {
-		char[] table = new char[10];
-		table[0] = 'a';
-		System.out.println(table[111]);
-		System.out.println(new String(table).equals("a"));
+public class Main {
+	public static LinkedListNode reverse(LinkedListNode node) {
+		LinkedListNode head = null;
+		int count = 0;
+
+		
+		while (node != null) {
+			System.out.println(" ");
+			System.out.println("loop "+ count++);
+			System.out.println("Original list is: "+ node.toString());
+			LinkedListNode n = new LinkedListNode(node.val);
+			System.out.println("Node n is: "+ n.val);
+			
+			n.next = head;
+			head = n;
+			System.out.println("After n.next = head; head = n; list head is: "+ head.toString());
+			
+			node = node.next;
+		}
+		return head;
+	}
+
+	public static void main(String[] argus) throws IOException {
+		int[] listary = { 1, 2, 3, 4, 5, 6, 7, 8 };
+		LinkedListNode node = new LinkedListNode(listary);
+		System.out.println("Before reverse: " + node.toString());
+		LinkedListNode result = reverse(node);
+		System.out.println("After reverse: " + result.toString());
 	}
 }
