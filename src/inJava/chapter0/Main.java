@@ -1,6 +1,8 @@
 package inJava.chapter0;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Main {
 	public static LinkedListNode reverse(LinkedListNode node) {
@@ -21,6 +23,7 @@ public class Main {
 			
 			node = node.next;
 		}
+		
 		return head;
 	}
 
@@ -30,5 +33,7 @@ public class Main {
 		System.out.println("Before reverse: " + node.toString());
 		LinkedListNode result = reverse(node);
 		System.out.println("After reverse: " + result.toString());
+		Queue<String> q = new LinkedList<>();
+		q.remove();
 	}
 }
