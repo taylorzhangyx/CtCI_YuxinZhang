@@ -5,35 +5,44 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Main {
-	public static LinkedListNode reverse(LinkedListNode node) {
-		LinkedListNode head = null;
-		int count = 0;
+	class Animal{
+	    public int type;//1-dog or 2-cat
+	    public String name;
 
-		
-		while (node != null) {
-			System.out.println(" ");
-			System.out.println("loop "+ count++);
-			System.out.println("Original list is: "+ node.toString());
-			LinkedListNode n = new LinkedListNode(node.val);
-			System.out.println("Node n is: "+ n.val);
-			
-			n.next = head;
-			head = n;
-			System.out.println("After n.next = head; head = n; list head is: "+ head.toString());
-			
-			node = node.next;
-		}
-		
-		return head;
+	    Animal(int type, String name){
+	        this.type = type;
+	        this.name = name;
+	    }
+	}
+	class Animal_Shelter<Animal> {
+	    LinkedList<Animal> list = new LinkedList<>();
+
+	    public void enqueue(Animal animal) {
+	        list.add(animal);
+	    }
+
+	    public Animal dequeueAny() {
+	        return list.remove();
+	    }
+
+	    public Animal dequeueDog() {
+	        for (int i = 0; i < list.size(); i++) {
+	            if (list.get(i).type == 1) {
+	                return list.remove(i);
+	            }
+	        }
+	        return null;
+	    }
+
+	    public Animal dequeueCat(){
+	        for (int i = 0; i < list.size(); i++) {
+	            if (list.get(i).type == 2) {
+	                return list.remove(i);
+	            }
+	        }
+	        return null;
+	    }
 	}
 
-	public static void main(String[] argus) throws IOException {
-		int[] listary = { 1, 2, 3, 4, 5, 6, 7, 8 };
-		LinkedListNode node = new LinkedListNode(listary);
-		System.out.println("Before reverse: " + node.toString());
-		LinkedListNode result = reverse(node);
-		System.out.println("After reverse: " + result.toString());
-		Queue<String> q = new LinkedList<>();
-		q.remove();
-	}
+
 }
