@@ -1,4 +1,4 @@
-package JavaBasics;
+package javabasics.comparatorbasic;
 
 import static org.junit.Assert.assertArrayEquals;
 
